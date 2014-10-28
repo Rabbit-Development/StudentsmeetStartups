@@ -1,0 +1,50 @@
+.title {
+	text-align: center;
+	font-size: 36px;
+}
+
+.paragraph {
+	text-align: center;
+}
+
+.second-title {
+	text-align: center;
+	font-size: 24px;
+}
+
+.whitebuble {
+	padding: 50px;
+	margin-top: 10vh;
+	margin-bottom: 10vh;
+	border-radius: 20px;
+	background-color: rgba(255,255,255,0.9);
+}
+
+.selection-btn {
+	padding: 15px;
+	border-radius: 8px;
+	border: 2px solid transparent;
+	color: #fff;
+	font-size: 21px;
+	margin-bottom: 2px;
+}
+
+.selection-btn.pink {
+	background-color: #8E2F5C;
+}
+
+.selection-btn.pink:hover{
+	background-color: transparent;
+	color: #8E2F5C;
+	border: 2px solid #8E2F5C;
+}
+
+.selection-btn.purple {
+	background-color: #5E2971;
+}
+
+.selection-btn.purple:hover{
+	background-color: transparent;
+	color: #5E2971;
+	border: 2px solid #5E2971;
+}

@@ -1,0 +1,11 @@
+<div class="container-fluid" ng-controller="backgroundImageController" ng-style="style">
+	<div class="container">
+		<div class="whitebuble" ng-controller="bubleController">
+			<div ng-switch="state">
+				<div ng-switch-when="greeting">
+					<div ng-include="'static/greeting.html'"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
