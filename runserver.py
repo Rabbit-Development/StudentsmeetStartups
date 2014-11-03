@@ -20,6 +20,7 @@ env.register(
         'angular-ui-router/release/angular-ui-router.min.js',
         'angular-bootstrap/ui-bootstrap-tpls.min.js',
         'studentsmeetstartups.js',
+        'angular-ui-select/dist/select.js',
         #filters='jsmin',
         output='studentsmeetstartups-script.js'
     )
