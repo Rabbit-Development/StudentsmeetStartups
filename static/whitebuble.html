@@ -3,7 +3,132 @@
 		<div class="whitebuble" ng-controller="bubleController">
 			<div ng-switch="state">
 				<div ng-switch-when="greeting">
-					<div ng-include="'static/greeting.html'"></div>
+					<div class="row">
+						<h1 class="title">“Alone we can do so little; together we can do so much”</h1>
+						<h2 class="second-title"><a href="http://en.wikipedia.org/wiki/Helen_Keller">- Helen Keller</a></h2>
+					</div>
+					<div class="row">
+						<div class="col-sm-8 col-sm-offset-2 paragraph">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ligula eget enim malesuada euismod. Aliquam blandit lacinia quam, vitae sollicitudin turpis volutpat blandit. Vivamus ut maximus magna, vitae vulputate justo. Proin sed justo ut velit condimentum fringilla. Quisque fringilla, tortor a elementum tristique, lacus enim luctus magna, id euismod purus libero ut sem. Sed vehicula efficitur vulputate. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed at scelerisque tellus, commodo finibus quam.
+							</p>
+							<p>
+								Nulla vestibulum justo id lacus euismod aliquam. Quisque id porta ipsum, sed egestas risus. Nunc ultricies sed dui sed porta. Morbi eleifend consequat egestas. Suspendisse nec dapibus neque. Cras sed vehicula leo, in lacinia augue. Vivamus odio mi, ultrices porttitor dui in, rhoncus porta enim. Phasellus molestie maximus nibh, non euismod nunc ultrices a. Curabitur sollicitudin aliquet lacus in consequat. Nullam at diam condimentum, vehicula orci id, sodales elit. Cras nec risus et turpis tempor feugiat. Duis egestas porttitor dignissim. Curabitur eget ornare orci. Vivamus accumsan ullamcorper tellus, tincidunt rhoncus nisl condimentum a. Donec non iaculis eros, quis malesuada justo.
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<h1 class="title">So let's start! Who are you?</h1>
+					</div>
+					<div class="row">
+						<button class="col-sm-offset-2 col-xs-12 col-sm-3 selection-btn pink" ng-click="changeState('signup-student')">Student!</button>
+						<button class="col-sm-offset-2 col-xs-12 col-sm-3 selection-btn purple" ng-click="changeState('signup-startup')">Startup!</button>
+					</div>
+				</div>
+				<div ng-switch-when="signup-startup" ng-controller="signupStartupController">
+					<div class="row">
+						<h1 class="title">title!</h1>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-5">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a dui metus. Nunc vehicula, erat eu tempor varius, ligula diam euismod orci, quis pellentesque magna justo quis lorem. Donec consequat eget magna nec sollicitudin. Fusce non odio commodo orci aliquet accumsan. Sed vel luctus est. Pellentesque euismod tortor ac maximus vehicula. Mauris facilisis sem et quam scelerisque, non viverra nisl sodales. Maecenas sit amet tincidunt justo. Morbi at libero at leo commodo feugiat. Mauris ut magna at augue interdum dictum. Cras eu fermentum ex. Donec sit amet est vulputate, vulputate ante et, malesuada sapien. Suspendisse aliquam ultricies consectetur. Suspendisse euismod posuere erat, et lobortis justo imperdiet non. Phasellus iaculis tellus at vulputate iaculis.</p>
+							<p>
+							In viverra erat ipsum, ac suscipit neque luctus sit amet. Curabitur accumsan justo sed velit placerat, vehicula iaculis turpis ullamcorper. Vivamus vel placerat enim. Aliquam ultricies gravida pellentesque. Quisque quis ante nibh. Aliquam non tortor at tellus placerat sollicitudin a ut arcu. Phasellus placerat ante nisl, in rhoncus lorem ultricies vitae. Aliquam varius viverra tellus, placerat commodo lectus consectetur non. In dui odio, consectetur ac enim quis, porttitor finibus libero. Fusce sit amet urna sit amet urna dignissim molestie eget eu lectus. Sed pulvinar ultricies odio vel aliquet. Curabitur commodo dapibus augue in mollis. Suspendisse potenti. Donec facilisis rutrum neque vitae commodo.</p>
+						</div>
+						<div class="col-xs-12 col-sm-7">
+							<form class="form-horizontal">
+								<div class="form-group">
+									<label class="control-label col-sm-3">Company Name</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-sm-3">Contact Email</label>
+									<div class="col-sm-9">
+										<input type="email" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-sm-3">Password</label>
+									<div class="col-sm-9">
+										<input type="password" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-sm-3">Repeat Password</label>
+									<div class="col-sm-9">
+										<input type="password" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-sm-3">Description</label>
+									<div class="col-sm-9">
+										<textarea class="form-control" maxlength="400" rows="9" style="resize: none;" ng-model="description" ng-keyup="characterCount()"></textarea>
+										<div class="pull-right">{{length}}/{{maxLength}}</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-sm-3">Optional Info</label>
+									<div class="col-sm-9">
+    									<input type="file" accept="application/pdf">
+									</div>
+								</div>
+								<button class="col-xs-12 col-sm-9 col-sm-offset-3 selection-btn purple">Start up now!</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div ng-switch-when="signup-student" ng-controller="signupStudentController">
+					<div class="row">
+						<h1 class="title">title!</h1>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-5">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a dui metus. Nunc vehicula, erat eu tempor varius, ligula diam euismod orci, quis pellentesque magna justo quis lorem. Donec consequat eget magna nec sollicitudin. Fusce non odio commodo orci aliquet accumsan. Sed vel luctus est. Pellentesque euismod tortor ac maximus vehicula. Mauris facilisis sem et quam scelerisque, non viverra nisl sodales. Maecenas sit amet tincidunt justo. Morbi at libero at leo commodo feugiat. Mauris ut magna at augue interdum dictum. Cras eu fermentum ex. Donec sit amet est vulputate, vulputate ante et, malesuada sapien. Suspendisse aliquam ultricies consectetur. Suspendisse euismod posuere erat, et lobortis justo imperdiet non. Phasellus iaculis tellus at vulputate iaculis.</p>
+							<p>
+							In viverra erat ipsum, ac suscipit neque luctus sit amet. Curabitur accumsan justo sed velit placerat, vehicula iaculis turpis ullamcorper. Vivamus vel placerat enim. Aliquam ultricies gravida pellentesque. Quisque quis ante nibh. Aliquam non tortor at tellus placerat sollicitudin a ut arcu. Phasellus placerat ante nisl, in rhoncus lorem ultricies vitae. Aliquam varius viverra tellus, placerat commodo lectus consectetur non. In dui odio, consectetur ac enim quis, porttitor finibus libero. Fusce sit amet urna sit amet urna dignissim molestie eget eu lectus. Sed pulvinar ultricies odio vel aliquet. Curabitur commodo dapibus augue in mollis. Suspendisse potenti. Donec facilisis rutrum neque vitae commodo.</p>
+						</div>
+						<div class="col-xs-12 col-sm-7">
+							<form class="form-horizontal">
+								<div class="form-group">
+									<label class="control-label col-sm-3">Contact Email</label>
+									<div class="col-sm-9">
+										<input type="email" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-sm-3">Password</label>
+									<div class="col-sm-9">
+										<input type="password" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-sm-3">Repeat Password</label>
+									<div class="col-sm-9">
+										<input type="password" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-sm-3">Description</label>
+									<div class="col-sm-9">
+										<textarea class="form-control" maxlength="400" rows="9" style="resize: none;" ng-model="description" ng-keyup="characterCount()"></textarea>
+										<div class="pull-right">{{length}}/{{maxLength}}</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-sm-3">Optional Info</label>
+									<div class="col-sm-9">
+    									<input type="file" accept="application/pdf">
+									</div>
+								</div>
+								<button class="col-xs-12 col-sm-9 col-sm-offset-3 selection-btn pink">Start up now!</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div ng-switch-default>
+
 				</div>
 			</div>
 		</div>
