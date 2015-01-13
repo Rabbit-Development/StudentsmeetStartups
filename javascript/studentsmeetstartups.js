@@ -6,7 +6,8 @@ angular.module('studentsmeetstartup',[
 	'backgroundImage',
 	'whiteBuble',
 	'signup-startup',
-	'signup-student'
+	'signup-student',
+	'ngSanitize'
 ])
 
 	.config(function($stateProvider, $urlRouterProvider, uiSelectConfig) {
@@ -58,6 +59,17 @@ angular.module('signup-startup', [])
 	        $scope.length = $scope.description.length;
 	        $log.info($scope.length);
       	}
+
+      	$scope.address = {};
+		$scope.refreshAddresses = function(address) {
+			var params = {address: address, sensor: false};
+			return $http.get(
+				'http://maps.googleapis.com/maps/api/geocode/json',
+				{params: params}
+			).then(function(response) {
+				$scope.addresses = response.data.results
+			});
+		};
 	}]);
 
 angular.module('signup-student', [])
@@ -69,4 +81,16 @@ angular.module('signup-student', [])
 	        $scope.length = $scope.description.length;
 	        $log.info($scope.length);
       	}
+
+      	$scope.address = {};
+		$scope.refreshAddresses = function(address) {
+			var params = {address: address, sensor: false};
+			return $http.get(
+				'http://maps.googleapis.com/maps/api/geocode/json',
+				{params: params}
+			).then(function(response) {
+				$scope.addresses = response.data.results
+			});
+		};
+
 	}]);

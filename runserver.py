@@ -21,6 +21,7 @@ env.register(
         'angular-bootstrap/ui-bootstrap-tpls.min.js',
         'studentsmeetstartups.js',
         'angular-ui-select/dist/select.js',
+        'angular-sanitize/angular-sanitize.js',
         #filters='jsmin',
         output='studentsmeetstartups-script.js'
     )

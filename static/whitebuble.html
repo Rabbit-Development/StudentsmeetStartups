@@ -50,6 +50,22 @@
 									</div>
 								</div>
 								<div class="form-group">
+									<label class="control-label col-sm-3">Location</label>
+									<div class="col-sm-9">
+										<ui-select ng-model="address.selected"
+										theme="bootstrap"
+										ng-disabled="disabled"
+										reset-search-input="false">
+											<ui-select-match placeholder="Enter an address...">{{$select.selected.formatted_address}}</ui-select-match>
+											<ui-select-choices repeat="address in addresses track by $index"
+											refresh="refreshAddresses($select.search)"
+											refresh-delay="0">
+												<div ng-bind-html="address.formatted_address | highlight: $select.search"></div>
+											</ui-select-choices>
+										</ui-select>
+									</div>
+								</div>
+								<div class="form-group">
 									<label class="control-label col-sm-3">Password</label>
 									<div class="col-sm-9">
 										<input type="password" class="form-control">
@@ -95,6 +111,22 @@
 									<label class="control-label col-sm-3">Contact Email</label>
 									<div class="col-sm-9">
 										<input type="email" class="form-control">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-sm-3">Location</label>
+									<div class="col-sm-9">
+										<ui-select ng-model="address"
+										theme="bootstrap"
+										ng-disabled="disabled"
+										reset-search-input="false">
+											<ui-select-match placeholder="Enter an address...">{{$select.selected.formatted_address}}</ui-select-match>
+											<ui-select-choices repeat="address in addresses track by $index"
+											refresh="refreshAddresses($select.search)"
+											refresh-delay="0">
+												<div ng-bind-html="address.formatted_address | highlight: $select.search"></div>
+											</ui-select-choices>
+										</ui-select>
 									</div>
 								</div>
 								<div class="form-group">
