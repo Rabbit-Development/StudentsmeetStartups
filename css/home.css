@@ -3,16 +3,33 @@
 }
 
 a {
-	color: #000;
+	color: #fff;
+}
+
+a:hover{
+  color: #ddd;
 }
 
 body {
 	font-family: 'Open Sans', Arial, sans-serif;
-	background-image: url('fjord.jpg');
+	background-image: url('background-purple-shattered.png');
+  color: #fff;
+}
+
+.white-overlay {
+  background-color: rgba(255,255,255,0.3);
+}
+
+.nav a {
+  color: #000;
+}
+
+.nav a:hover{
+  color: #555;
 }
 
 hr {
-	border-top: 1px solid green;
+	border-top: 1px solid white;
 }
 
 .navbar {
@@ -51,7 +68,6 @@ hr {
 }
 
 .navbar-nav > li > a:hover {
-	color: green;
 	background-color: #fff;
 	text-decoration: underline;
 }

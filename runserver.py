@@ -32,7 +32,7 @@ env.register(
     'studentsmeetstartups-style',
     assets.Bundle(
         'bootstrap/dist/css/bootstrap.min.css',
-        'index.css',
+        'home.css',
         #filters='cssmin',
         output='studentsmeetstartups-style.css'
     )

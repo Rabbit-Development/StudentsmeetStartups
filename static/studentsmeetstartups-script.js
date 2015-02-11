@@ -35290,6 +35290,7 @@ angular.module('studentsmeetstartup',[
 ])
 
 	.config(function($stateProvider, $urlRouterProvider, uiSelectConfig) {
+		$urlRouterProvider.otherwise('/home');
 		/*var html5Mode = (window.history && window.history.pushState);
 		$locationProvider.html5Mode(html5Mode).hashPrefix('!');*/
 		uiSelectConfig.theme = 'bootstrap';

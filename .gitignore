@@ -54,4 +54,4 @@ docs/_build/
 target/
 
 bower_components/
-*.webassets-cache/*
+*.webassets-cache*
