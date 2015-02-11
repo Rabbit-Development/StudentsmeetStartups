@@ -3,11 +3,11 @@ angular.module('studentsmeetstartup',[
 	'ui.router',
 	'ui.bootstrap',
 	'ui.select',
-	'backgroundImage',
-	'whiteBuble',
 	'signup-startup',
 	'signup-student',
-	'ngSanitize'
+	'ngSanitize',
+	'scrollto'
+
 ])
 
 	.config(function($stateProvider, $urlRouterProvider, uiSelectConfig) {
@@ -16,39 +16,20 @@ angular.module('studentsmeetstartup',[
 		uiSelectConfig.theme = 'bootstrap';
 		$stateProvider
 			.state('greeting', {
-				url: '/index',
+				url: '/home',
 				views: {
-					'content': {
-						templateUrl: "static/whitebuble.html"
-					}
-				}
-			})
-
-			.state('browse-startup', {
-				url: '/index',
-				views: {
-					'content': {
-						templateUrl: "static/browse-startup.html"
+					'welcome': {
+						templateUrl: "static/greeting.html"
+					},
+					'student-signup':{
+						templateUrl: 'static/student-signup.html'
+					},
+					'startup-signup':{
+						templateUrl: 'static/startup-signup.html'
 					}
 				}
 			})
 	});
-
-angular.module('backgroundImage', [])
-	.controller('backgroundImageController', ['$scope', '$log', '$http', function($scope, $log, $http) {
-		$scope.images = ['static/fjord.jpg'];
-		$scope.image = '#000 url(' + $scope.images[Math.floor(Math.random() * $scope.images.length)] + ') 0 0 no-repeat';
-		$scope.style = {'background': $scope.image};
-	}]);
-
-angular.module('whiteBuble', [])
-	.controller('bubleController', ['$scope', '$log', '$http', function($scope, $log, $http) {
-		$scope.state = 'greeting';
-		$log.info($scope.state);
-		$scope.changeState = function(state){
-			$scope.state = state;
-		}
-	}]);
 
 angular.module('signup-startup', [])
 	.controller('signupStartupController', ['$scope', '$log', '$http', function($scope, $log, $http){

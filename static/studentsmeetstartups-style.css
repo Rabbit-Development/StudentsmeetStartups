@@ -13,6 +13,7 @@ a {
 
 body {
 	font-family: 'Open Sans', Arial, sans-serif;
+	background-image: url('fjord.jpg');
 }
 
 .navbar {
@@ -56,6 +57,7 @@ body {
 	background-color: #fff;
 	text-decoration: underline;
 }
+
 .title {
 	text-align: center;
 	font-size: 36px;
@@ -76,6 +78,10 @@ body {
 	margin-bottom: 10vh;
 	border-radius: 20px;
 	background-color: rgba(255,255,255,0.9);
+}
+
+.white-overlay {
+	background-color: rgba(255,255,255,0.8);
 }
 
 .selection-btn {
@@ -293,4 +299,3 @@ body {
 .ui-select-bootstrap.ng-dirty.ng-invalid > button.btn.ui-select-match {
     border-color: #D44950;
 }
-

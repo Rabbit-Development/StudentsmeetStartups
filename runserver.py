@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, make_response
 from flask.ext import assets
 
 controller = Flask(__name__)
@@ -22,6 +22,7 @@ env.register(
         'studentsmeetstartups.js',
         'angular-ui-select/dist/select.js',
         'angular-sanitize/angular-sanitize.js',
+        'angular-scrollto/angular-scrollto.js',
         #filters='jsmin',
         output='studentsmeetstartups-script.js'
     )
@@ -32,7 +33,6 @@ env.register(
     assets.Bundle(
         'bootstrap/dist/css/bootstrap.min.css',
         'index.css',
-        'whitebuble.css',
         #filters='cssmin',
         output='studentsmeetstartups-style.css'
     )
@@ -40,7 +40,11 @@ env.register(
 
 @controller.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('signup-template.html')
+
+@controller.route("/browse")
+def browse():
+    return make_response('Browsing')
 
 if __name__ == '__main__':
     controller.run(debug=True)
