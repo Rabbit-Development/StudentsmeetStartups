@@ -1,0 +1,70 @@
+<div ng-controller="signupStartupController" style="margin-bottom: 10vh;">
+	<div class="row">
+		<h1 class="title">Startup Signup!</h1>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-sm-5">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a dui metus. Nunc vehicula, erat eu tempor varius, ligula diam euismod orci, quis pellentesque magna justo quis lorem. Donec consequat eget magna nec sollicitudin. Fusce non odio commodo orci aliquet accumsan. Sed vel luctus est. Pellentesque euismod tortor ac maximus vehicula. Mauris facilisis sem et quam scelerisque, non viverra nisl sodales. Maecenas sit amet tincidunt justo. Morbi at libero at leo commodo feugiat. Mauris ut magna at augue interdum dictum. Cras eu fermentum ex. Donec sit amet est vulputate, vulputate ante et, malesuada sapien. Suspendisse aliquam ultricies consectetur. Suspendisse euismod posuere erat, et lobortis justo imperdiet non. Phasellus iaculis tellus at vulputate iaculis.</p>
+			<p>
+			In viverra erat ipsum, ac suscipit neque luctus sit amet. Curabitur accumsan justo sed velit placerat, vehicula iaculis turpis ullamcorper. Vivamus vel placerat enim. Aliquam ultricies gravida pellentesque. Quisque quis ante nibh. Aliquam non tortor at tellus placerat sollicitudin a ut arcu. Phasellus placerat ante nisl, in rhoncus lorem ultricies vitae. Aliquam varius viverra tellus, placerat commodo lectus consectetur non. In dui odio, consectetur ac enim quis, porttitor finibus libero. Fusce sit amet urna sit amet urna dignissim molestie eget eu lectus. Sed pulvinar ultricies odio vel aliquet. Curabitur commodo dapibus augue in mollis. Suspendisse potenti. Donec facilisis rutrum neque vitae commodo.</p>
+		</div>
+		<div class="col-xs-12 col-sm-7">
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label class="control-label col-sm-3">Company Name</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3">Contact Email</label>
+					<div class="col-sm-9">
+						<input type="email" class="form-control">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3">Location</label>
+					<div class="col-sm-9">
+						<ui-select ng-model="address.selected"
+						theme="bootstrap"
+						ng-disabled="disabled"
+						reset-search-input="false">
+							<ui-select-match placeholder="Enter an address...">{{$select.selected.formatted_address}}</ui-select-match>
+							<ui-select-choices repeat="address in addresses track by $index"
+							refresh="refreshAddresses($select.search)"
+							refresh-delay="0">
+								<div ng-bind-html="address.formatted_address | highlight: $select.search"></div>
+							</ui-select-choices>
+						</ui-select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3">Password</label>
+					<div class="col-sm-9">
+						<input type="password" class="form-control">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3">Repeat Password</label>
+					<div class="col-sm-9">
+						<input type="password" class="form-control">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3">Description</label>
+					<div class="col-sm-9">
+						<textarea class="form-control" maxlength="400" rows="9" style="resize: none;" ng-model="description" ng-keyup="characterCount()"></textarea>
+						<div class="pull-right">{{length}}/{{maxLength}}</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-3">Optional Info</label>
+					<div class="col-sm-9">
+						<input type="file" accept="application/pdf">
+					</div>
+				</div>
+				<button class="col-xs-12 col-sm-9 col-sm-offset-3 selection-btn purple">Start up now!</button>
+			</form>
+		</div>
+	</div>
+</div>

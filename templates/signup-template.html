@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="studentsmeetstartup">
+<head>
+	<title></title>
+	{% assets "studentsmeetstartups-style" %}
+    <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}"></script>
+    {% endassets %}
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<style>
+		.select2 > .select2-choice.ui-select-match {
+		  /* Because of the inclusion of Bootstrap */
+		  height: 29px;
+		}
+
+		.selectize-control > .selectize-dropdown {
+		  top: 36px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+			        <span class="sr-only">Toggle navigation</span>
+			       	<i class="fa fa-2x fa-bars"></i>
+		      	</button>
+		      	<a class="navbar-brand" ui-sref="frontpage">
+		      		
+		      	</a>
+			</div>
+			<div collapse="navCollapsed" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a ui-sref="greeting">Frontpage</a></li>
+					<li><a href="/browse">Browse</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a>Log in</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container-fluid white-overlay">
+		<div class="container">
+			<div ui-view="welcome"></div>
+		</div>
+		<hr>
+		<div class="container">
+			<div id="student-signup" ui-view="student-signup"></div>
+		</div>
+		<hr>
+		<div class="container">
+			<div id="startup-signup" ui-view="startup-signup"></div>
+		</div>
+	</div>
+	{% assets "studentsmeetstartups-script" %}
+	<script type="text/javascript" src="{{ ASSET_URL }}"></script>
+	{% endassets %}
+</body>
+</html>
